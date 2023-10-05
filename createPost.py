@@ -8,7 +8,7 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Create a new post
-new_post = Post(userid=2, postcomments='new photo ')
+new_post = Post(userid=1, postcomments='new photo ')
 
 session.add(new_post)
 session.commit()

@@ -6,8 +6,8 @@ Base = declarative_base()
 
 # defination of database
 
-class Recipe(Base):
-    __tablename__ ="Recipe"
+class user(Base):
+    __tablename__ ="user"
     userid = Column ("userid",Integer , primary_key = True)
     firstName = Column ("firstName", String)
     lastName = Column ("lasrName", String)
@@ -17,13 +17,13 @@ class Recipe(Base):
 class Post(Base):
     __tablename__ ="Post"
     postid = Column ("postid" , Integer,primary_key=True)
-    userid = Column ("userid", Integer, ForeignKey('Recipe.userid'))
+    userid = Column ("userid", Integer, ForeignKey('user.userid'))
     postcomments = Column ("postcomments", String)
 
 class Likes(Base):
     __tablename__ ="likes"
     likesid = Column ("likesid", Integer ,primary_key=True)
-    userid = Column ("userid" ,Integer ,ForeignKey('Recipe.userid'))
+    userid = Column ("userid" ,Integer ,ForeignKey('user.userid'))
     postid = Column ("postid" ,Integer , ForeignKey('Post.postid'))
 
 # create recipe
