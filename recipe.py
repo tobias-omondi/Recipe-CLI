@@ -20,7 +20,7 @@ class Post(Base):
     userid = Column ("userid", Integer, ForeignKey('Recipe.userid'))
     postcomments = Column ("postcomments", String)
 
-class likes(Base):
+class Likes(Base):
     __tablename__ ="likes"
     likesid = Column ("likesid", Integer ,primary_key=True)
     userid = Column ("userid" ,Integer ,ForeignKey('Recipe.userid'))
